@@ -7,23 +7,29 @@ import Login from "./pages/Login";
 import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import Signup from "./pages/Signup";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
-function App() {
+export default function App() {
   return (
     <Router>
       <AuthProvider>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/result" element={<Result />} />
+            <Route
+              path="/signup"
+              element={<PublicRoute component={Signup} />}
+            />
+            <Route path="/login" element={<PublicRoute component={Login} />} />
+            <Route path="/quiz" element={<PrivateRoute component={Quiz} />} />
+            <Route
+              path="/result"
+              element={<PrivateRoute component={Result} />}
+            />
           </Routes>
         </Layout>
       </AuthProvider>
     </Router>
   );
 }
-
-export default App;

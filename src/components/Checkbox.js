@@ -1,7 +1,7 @@
 export default function Checkbox({
   className,
   labelFor,
-  notAnalysis,
+  notAnalysis = true,
   text,
   ...rest
 }) {
