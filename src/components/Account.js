@@ -19,8 +19,7 @@ export default function Account() {
             onClick={() => {
               const confirm = window.confirm("Do you want to logout?");
               if (confirm) {
-                logout();
-                navigate("/login");
+                logout().then((res) => navigate("/login"));
               }
             }}
           >
