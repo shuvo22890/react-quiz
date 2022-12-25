@@ -14,10 +14,10 @@ export default function Videos() {
           dataLength={videos.length}
           hasMore={hasMore}
           loader={<p>Loading...</p>}
-          next={() => setPage(page + 6)}
+          next={() => setPage(page + 8)}
           endMessage={<h4>No more video to show!</h4>}
         >
-          {videos.map((video) => (
+          {videos.map((video, i) => (
             <Video
               key={video.youtubeID}
               id={video.youtubeID}

@@ -3,7 +3,7 @@ import classes from "../styles/Video.module.css";
 
 export default function Video({ title, noq, id }) {
   const LinkWrapper = ({ children }) =>
-    noq > 0 ? <Link to="/quiz">{children}</Link> : children;
+    noq > 0 ? <Link to={"/quiz/" + id}>{children}</Link> : children;
 
   return (
     <LinkWrapper>

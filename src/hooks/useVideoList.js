@@ -23,7 +23,7 @@ export default function useVideoList(page) {
         videoRef,
         orderByKey(),
         startAt("" + page),
-        limitToFirst(6)
+        limitToFirst(8)
       );
 
       try {
@@ -33,6 +33,7 @@ export default function useVideoList(page) {
         setLoading(false);
         if (snapshot.exists()) {
           setVideos((previous) => {
+            if (page === 1) return [...Object.values(snapshot.val())];
             return [...previous, ...Object.values(snapshot.val())];
           });
         } else {

@@ -22,9 +22,12 @@ export default function App() {
               element={<PublicRoute component={Signup} />}
             />
             <Route path="/login" element={<PublicRoute component={Login} />} />
-            <Route path="/quiz" element={<PrivateRoute component={Quiz} />} />
             <Route
-              path="/result"
+              path="/quiz/:id"
+              element={<PrivateRoute component={Quiz} />}
+            />
+            <Route
+              path="/result/:id"
               element={<PrivateRoute component={Result} />}
             />
           </Routes>
